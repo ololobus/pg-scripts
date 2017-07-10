@@ -1,0 +1,11 @@
+#! /usr/bin/env sh
+
+PG_WORKSPACE_PATH="/Users/alexk/dev/postgres"
+
+export PG_WORKSPACE_PATH="$PG_WORKSPACE_PATH"
+export PATH="$PG_WORKSPACE_PATH/postgres_bin/bin:$PATH"
+export PGDATA="$PG_WORKSPACE_PATH/postgres_data"
+export CFLAGS="-O0"
+
+# Restricted by MacOS
+# export LD_LIBRARY_PATH="$PG_WORKSPACE_PATH/postgres_bin/lib"

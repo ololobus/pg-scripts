@@ -1,0 +1,3 @@
+#! /usr/bin/env sh
+
+initdb -D $PG_WORKSPACE_PATH/postgres_data

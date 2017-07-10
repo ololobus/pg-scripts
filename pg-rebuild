@@ -1,0 +1,10 @@
+#! /usr/bin/env sh
+
+make clean
+
+pg-configure
+
+make -j8 -s
+make install
+
+pg-server restart
