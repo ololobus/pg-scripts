@@ -1,2 +1,2 @@
 #! /usr/bin/env sh
-pg_ctl -D $PG_WORKSPACE_PATH/postgres_data -l logfile $1
+pg_ctl -D $PG_WORKSPACE_PATH/postgres_data -l pg.log $1
