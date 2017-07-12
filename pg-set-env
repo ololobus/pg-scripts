@@ -1,6 +1,6 @@
 #! /usr/bin/env sh
 
-PG_WORKSPACE_PATH="/Users/alexk/dev/postgres"
+PG_WORKSPACE_PATH=$(pwd)
 
 export PG_WORKSPACE_PATH="$PG_WORKSPACE_PATH"
 export PATH="$PG_WORKSPACE_PATH/postgres_bin/bin:$PATH"
