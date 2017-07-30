@@ -3,14 +3,20 @@ PostgreSQL development scripts
 
 ### Usage
 
-Edit pg-set-env (e.g. `PG_WORKSPACE_PATH`) with your paths. Then:
-
+Go to your working directory
 ```shell
-pg-set-env
+cd /home/username/dev/postgres
+```
+
+Set up `ENV`
+```shell
+. pg-set-env
+```
+
+Do some stuff
+```shell
 pg-configure
-
 pg-initdb
-
 pg-server start
 ```
 
