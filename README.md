@@ -1,6 +1,12 @@
 PostgreSQL development scripts
 ==============================
 
+### PG Build
+Install dependencies dependencies (Ubuntu):
+```shell
+sudo apt-get install bison flex wget build-essential git gcc make zlib1g-dev libreadline7 libreadline-dev
+```
+
 ### Usage
 
 Go to your working directory
