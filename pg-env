@@ -1,0 +1,18 @@
+#! /usr/bin/env sh
+
+if test "$1" && test "$1" = "set";
+then
+    PG_WORKSPACE_PATH=$(pwd)
+
+    export PG_WORKSPACE_PATH=$PG_WORKSPACE_PATH
+    export PGHOME=$PG_WORKSPACE_PATH/postgres_bin
+    export PG_CONFIG=$PGHOME/bin/pg_config
+    export PATH=$PGHOME/bin:$PATH
+    export PGDATA=$PG_WORKSPACE_PATH/postgres_data
+    export CFLAGS="-Og"
+
+    # Restricted by MacOS
+    # export LD_LIBRARY_PATH="$PG_WORKSPACE_PATH/postgres_bin/lib"
+else
+    env | grep PG | sort
+fi

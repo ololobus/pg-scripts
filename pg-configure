@@ -1,3 +1,3 @@
 #! /usr/bin/env sh
 
-./configure --prefix=$PG_WORKSPACE_PATH/postgres_bin/ --enable-debug --enable-cassert --enable-depend
+./configure --prefix=$PG_WORKSPACE_PATH/postgres_bin/ --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v"

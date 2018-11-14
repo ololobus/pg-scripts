@@ -1,10 +1,6 @@
 #! /usr/bin/env sh
 
-make clean
+make -j -s clean
 
 pg-configure
-
-make -j8 -s
-make install
-
-pg-server restart
+make -j -s && make -j -s install

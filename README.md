@@ -16,7 +16,7 @@ cd /home/username/dev/postgres
 
 Set up `ENV`
 ```shell
-. pg-set-env
+. pg-env set
 ```
 
 Do some stuff
@@ -26,7 +26,7 @@ pg-initdb
 pg-server start
 ```
 
-Clean and rebuild all:
+Clean and rebuild everything:
 ```shell
 pg-rebuild
 ```
