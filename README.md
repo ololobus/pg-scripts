@@ -9,7 +9,7 @@ sudo apt-get install bison flex wget build-essential git gcc make zlib1g-dev lib
 
 ### Usage
 
-Go to your working directory
+Go to your working directory:
 ```shell
 cd /home/username/dev/postgres
 ```
