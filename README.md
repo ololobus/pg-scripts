@@ -1,7 +1,7 @@
 PostgreSQL development scripts
 ==============================
 
-### PG Build
+### PG build
 Install dependencies (Ubuntu):
 ```shell
 sudo apt-get install bison flex wget build-essential git gcc make zlib1g-dev libreadline7 libreadline-dev
@@ -14,19 +14,20 @@ Go to your working directory
 cd /home/username/dev/postgres
 ```
 
-Set up `ENV`
+Set up `ENV`:
 ```shell
 . pg-env set
 ```
 
-Do some stuff
+Do some stuff:
 ```shell
 pg-configure
+make -j -s && make -j -s install
 pg-initdb
 pg-server start
 ```
 
-Clean and rebuild everything:
+Clean up and rebuild everything:
 ```shell
 pg-rebuild
 ```
