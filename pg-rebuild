@@ -1,6 +1,6 @@
 #! /usr/bin/env sh
 
-make -j -s clean
+make -j $(getconf _NPROCESSORS_ONLN) -s clean
 
 pg-configure
-make -j -s && make -j -s install
+make -j $(getconf _NPROCESSORS_ONLN) -s && make -j $(getconf _NPROCESSORS_ONLN) -s install
