@@ -9,7 +9,8 @@ then
     export PG_CONFIG=$PGHOME/bin/pg_config
     export PATH=$PGHOME/bin:$PATH
     export PGDATA=$PG_WORKSPACE_PATH/postgres_data
-    export CFLAGS="-Og"
+    export CFLAGS="-O0 -g"
+    # export CFLAGS="-Og -g"
 
     # Restricted by MacOS
     # export LD_LIBRARY_PATH="$PG_WORKSPACE_PATH/postgres_bin/lib"
