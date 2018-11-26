@@ -1,3 +1,3 @@
 #! /usr/bin/env sh
 ulimit -c unlimited
-pg_ctl -D $PG_WORKSPACE_PATH/postgres_data -l pg.log -m fast $1
+pg_ctl -D $PGDATA -l pg.log -m fast $1
