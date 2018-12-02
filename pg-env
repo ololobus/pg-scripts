@@ -12,8 +12,15 @@ then
     export CFLAGS="-O0 -g"
     # export CFLAGS="-Og -g"
 
+    export PATH="$HOME/perl5/bin${PATH:+:${PATH}}";
+    export PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}";
+    export PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}";
+    export PERL_MB_OPT="--install_base \"$HOME/perl5\"";
+    export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5";
+
     # Restricted by MacOS
     # export LD_LIBRARY_PATH="$PG_WORKSPACE_PATH/postgres_bin/lib"
 else
     env | grep PG | sort
+    env | grep PERL | sort
 fi
