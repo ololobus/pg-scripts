@@ -1,3 +1,3 @@
 #! /usr/bin/env sh
 
-ps wuax | grep postgres
+ps wuaxf | grep postgres
