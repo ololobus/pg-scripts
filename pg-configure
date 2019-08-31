@@ -7,4 +7,4 @@ else
     conf_path="."
 fi
 
-$conf_path/configure --with-perl --with-python --prefix=$PGHOME --enable-nls --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v"
+$conf_path/configure --with-perl --prefix=$PGHOME --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v"
