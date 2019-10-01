@@ -66,3 +66,8 @@ make -j4 -s install
 initdb
 pg-server start
 ```
+
+```shell
+createdb
+psql
+```
