@@ -8,6 +8,11 @@ Install dependencies (Ubuntu)
 sudo apt-get install bison flex wget build-essential git gcc make zlib1g-dev libreadline7 libreadline-dev
 ```
 
+Some possible extra deps:
+```shell
+sudo apt-get install libicu-dev libgss-dev libkrb5-dev libxml2-dev libxslt1-dev libldap2-dev tcl-dev
+```
+
 ### PG build
 
 Get Postgres sources
