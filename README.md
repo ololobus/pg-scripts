@@ -10,8 +10,8 @@ sudo apt-get install bison flex build-essential gcc make zlib1g-dev libreadline7
 
 You may require some extra deps:
 ```shell
-sudo apt-get install libicu-dev libgss-dev libkrb5-dev libxml2-dev libxslt1-dev libldap2-dev \
-                     lcov tcl-dev libzstd-dev libssl-dev gettext \
+sudo apt-get install libicu-dev libgss-dev libkrb5-dev libxml2-dev libxslt1-dev xsltproc \
+                     lcov tcl-dev libzstd-dev libssl-dev libldap2-dev gettext \
                      python-dev libpython-dev \
                      perl libperl-dev libdbi-perl cpanminus
 ```
