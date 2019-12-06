@@ -10,28 +10,27 @@ fi
 if [ "$2" != "" ]
 then
 
-	if [ "$2" = "minimal" ]
-	then
-		$conf_path/configure --prefix=$PGHOME --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v"
+    if [ "$2" = "minimal" ]
+    then
+        $conf_path/configure --prefix=$PGHOME --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v"
 
-	elif [ "$2" = "coverage" ]
-	then
-		$conf_path/configure --prefix=$PGHOME --enable-debug --enable-cassert --enable-depend --enable-tap-tests --enable-coverage BISONFLAGS="-v"
+    elif [ "$2" = "coverage" ]
+    then
+        $conf_path/configure --prefix=$PGHOME --enable-debug --enable-cassert --enable-depend --enable-tap-tests --enable-coverage BISONFLAGS="-v"
 
-	elif [ "$2" = "extra" ]
-	then
-		$conf_path/configure --with-perl --with-python --prefix=$PGHOME --enable-nls --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v"
+    elif [ "$2" = "extra" ]
+    then
+        $conf_path/configure --with-perl --with-python --prefix=$PGHOME --enable-nls --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v"
 
-	elif [ "$2" = "buildfarm" ] # Tested on Ubuntu 18.04 LTS
-	then
-		$conf_path/configure --enable-debug --enable-cassert --enable-nls --with-perl \
-			--with-python --with-tcl --with-gssapi --with-openssl --with-libxml \
-			--with-libxslt --with-ldap --with-icu --with-zstd \
-			--with-rsocket --enable-tap-tests --with-tclconfig=/usr/lib/tcl8.6 \
-			--prefix=$PGHOME
-	fi
+    elif [ "$2" = "buildfarm" ] # Tested on Ubuntu 18.04 LTS
+    then
+        $conf_path/configure --enable-debug --enable-cassert --enable-nls --with-perl \
+            --with-python --with-tcl --with-gssapi --with-openssl --with-libxml \
+            --with-libxslt --with-ldap --with-icu --with-zstd \
+            --with-rsocket --enable-tap-tests --with-tclconfig=/usr/lib/tcl8.6 \
+            --prefix=$PGHOME
+    fi
 
 else
-	$conf_path/configure --prefix=$PGHOME --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v"
+    $conf_path/configure --prefix=$PGHOME --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v"
 fi
-

@@ -1,3 +1,8 @@
-#! /usr/bin/env sh
+#!/usr/bin/env sh
 
-initdb -D $PGDATA
+if test "$1"
+then
+    initdb -D $1
+else
+    initdb -D $PGDATA
+fi

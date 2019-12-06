@@ -1,3 +1,4 @@
-#! /usr/bin/env sh
+#!/usr/bin/env sh
+
 ulimit -c unlimited
 pg_ctl -D $PGDATA -l pg.log -m fast $1

@@ -1,3 +1,8 @@
-#! /usr/bin/env sh
+#!/usr/bin/env sh
 
-ps wuaxf | grep postgres
+if test "$OSTYPE" != "darwin"
+then
+    ps wuaxf | grep postgres
+else
+    ps wuax | grep postgres
+fi

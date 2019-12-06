@@ -1,6 +1,11 @@
-#! /usr/bin/env sh
+#!/usr/bin/env sh
+
+if test "$1"
+then
+    pg-configure $1
+else
+    pg-configure
+fi
 
 make -j $(getconf _NPROCESSORS_ONLN) -s clean
-
-pg-configure
-make -j $(getconf _NPROCESSORS_ONLN) -s && make -j $(getconf _NPROCESSORS_ONLN) -s install
+make -j $(getconf _NPROCESSORS_ONLN) -s install
