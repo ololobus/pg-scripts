@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-if test "$OSTYPE" != "darwin"
+if test "$(uname -s)" != "Darwin"
 then
     ps wuaxf | grep postgres
 else
