@@ -3,32 +3,39 @@
 if test "$1"
 then
     conf_path=$1
+    shift;
 else
     conf_path="."
 fi
 
-if [ "$2" != "" ]
+if [ "$1" != "" ]
 then
 
-    if [ "$2" = "minimal" ]
+    if [ "$1" = "minimal" ]
     then
-        $conf_path/configure --prefix=$PGHOME --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v"
+        shift;
+        $conf_path/configure --prefix=$PGHOME --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v" $@
 
-    elif [ "$2" = "coverage" ]
+    elif [ "$1" = "coverage" ]
     then
-        $conf_path/configure --prefix=$PGHOME --enable-debug --enable-cassert --enable-depend --enable-tap-tests --enable-coverage BISONFLAGS="-v"
+        shift;
+        $conf_path/configure --prefix=$PGHOME --enable-debug --enable-cassert --enable-depend --enable-tap-tests --enable-coverage BISONFLAGS="-v" $@
 
-    elif [ "$2" = "extra" ]
+    elif [ "$1" = "extra" ]
     then
-        $conf_path/configure --with-perl --with-python --prefix=$PGHOME --enable-nls --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v"
+        shift;
+        $conf_path/configure --prefix=$PGHOME --with-perl --with-python --enable-nls --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v" $@
 
-    elif [ "$2" = "buildfarm" ] # Tested on Ubuntu 18.04 LTS
+    elif [ "$1" = "buildfarm" ] # Tested on Ubuntu 18.04 LTS
     then
+        shift;
         $conf_path/configure --enable-debug --enable-cassert --enable-nls --with-perl \
             --with-python --with-tcl --with-gssapi --with-openssl --with-libxml \
             --with-libxslt --with-ldap --with-icu --with-zstd \
             --with-rsocket --enable-tap-tests --with-tclconfig=/usr/lib/tcl8.6 \
-            --prefix=$PGHOME
+            --prefix=$PGHOME $@
+    else
+        $conf_path/configure --prefix=$PGHOME --enable-debug --enable-cassert --enable-depend --enable-tap-tests BISONFLAGS="-v" $@
     fi
 
 else
