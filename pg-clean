@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-rm -rf postgres_* src config  config.log  config.status  contrib  doc  GNUmakefile  Makefile  pg.log
+rm -rf postgres_* src config  config.log  config.status  contrib  doc  GNUmakefile  Makefile  pg.log tmp_install
 
