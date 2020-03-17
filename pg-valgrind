@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+exec valgrind --leak-check=no --gen-suppressions=all \
+    --time-stamp=yes \
+    --error-markers=VALGRINDERROR-BEGIN,VALGRINDERROR-END \
+    --trace-children=yes postgres "$@"
+
+
+# # See: https://wiki.postgresql.org/wiki/Valgrind
+# valgrind --leak-check=no --gen-suppressions=all \
+#    --suppressions=src/tools/valgrind.supp --time-stamp=yes \
+#    --error-markers=VALGRINDERROR-BEGIN,VALGRINDERROR-END \
+#    --log-file=$HOME/pg-valgrind/%p.log --trace-children=yes
+
