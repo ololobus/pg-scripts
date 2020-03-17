@@ -8,6 +8,8 @@ else
     conf_path="."
 fi
 
+export PG_SRC_PATH=$(cd $conf_path; pwd)
+
 if [ "$1" != "" ]
 then
 

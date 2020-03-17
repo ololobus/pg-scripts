@@ -1,10 +1,22 @@
 #!/usr/bin/env sh
 
-exec valgrind --leak-check=no --gen-suppressions=all \
-    --time-stamp=yes \
-    --error-markers=VALGRINDERROR-BEGIN,VALGRINDERROR-END \
-    --trace-children=yes postgres "$@"
+if [ "$1" != "" ]
+then
 
+    if [ "$1" = "report" ]
+    then
+		cat pg-valgrind/* | grep 'ERROR SUMMARY'
+    elif [ "$1" = "clean" ]
+    then
+		rm pg-valgrind/*
+    else
+        mkdir -p $PG_WORKSPACE_PATH/pg-valgrind
+		exec valgrind --leak-check=no --gen-suppressions=all \
+    		--suppressions=$PG_SRC_PATH/src/tools/valgrind.supp --time-stamp=yes \
+    		--error-markers=VALGRINDERROR-BEGIN,VALGRINDERROR-END \
+    		--log-file=$PG_WORKSPACE_PATH/pg-valgrind/%p.log --trace-children=yes postgres "$@"
+    fi
+fi
 
 # # See: https://wiki.postgresql.org/wiki/Valgrind
 # valgrind --leak-check=no --gen-suppressions=all \
