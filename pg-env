@@ -12,7 +12,7 @@ then
     export PG_WORKSPACE_PATH=$PG_WORKSPACE_PATH
     export PGHOME=$PG_WORKSPACE_PATH/postgres_bin
     export PG_CONFIG=$PGHOME/bin/pg_config
-    export PATH=$PGHOME/bin:$PATH
+    export PATH=$PGHOME/bin:$PG_WORKSPACE_PATH/src/test/isolation:$PATH
     export PGDATA=$PG_WORKSPACE_PATH/postgres_data
     export CFLAGS="-O0 -g"
     # export CFLAGS="-Og -g"
