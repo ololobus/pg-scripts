@@ -3,17 +3,30 @@ PostgreSQL development scripts
 
 ### Dependencies
 
-Install dependencies (Ubuntu)
+#### Linux (Debian)
+
+Install dependencies
 ```shell
 sudo apt-get install bison flex build-essential gcc make zlib1g-dev libreadline7 libreadline-dev
 ```
 
-You may require some extra deps:
+You may need some extra deps:
 ```shell
 sudo apt-get install libicu-dev libgss-dev libkrb5-dev libxml2-dev libxslt1-dev xsltproc \
                      lcov tcl-dev libzstd-dev libssl-dev libldap2-dev gettext \
                      python-dev libpython-dev \
                      perl libperl-dev libdbi-perl cpanminus
+```
+
+#### macOS
+
+Minimal dev dependencies:
+```shell
+brew install bison flex make perl
+```
+
+```shell
+cpan IPC::Run
 ```
 
 ### PG build
