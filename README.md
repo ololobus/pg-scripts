@@ -20,7 +20,7 @@ sudo apt install libicu-dev libgss-dev libkrb5-dev libxml2-dev libxslt1-dev xslt
 
 Packages for documentation:
 ```shell
-sudo apt install libxml2-utils docbook docbook-xml fop dbtoepub
+sudo apt install libxml2-utils docbook docbook-xml docbook-xsl fop dbtoepub
 ```
 
 #### macOS
