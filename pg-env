@@ -9,6 +9,9 @@ then
         PG_WORKSPACE_PATH=$(pwd)
     fi
 
+    export LANG=en_US.UTF-8
+    export LC_CTYPE=en_US.UTF-8
+
     export PG_WORKSPACE_PATH=$PG_WORKSPACE_PATH
     export PGHOME=$PG_WORKSPACE_PATH/postgres_bin
     export PG_CONFIG=$PGHOME/bin/pg_config
